@@ -1,0 +1,55 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 40px;
+  background-color: rgb(199, 231, 242);
+}
+
+h1 {
+  margin-bottom: 30px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1.5rem;
+  color: rgb(12, 88, 91);
+}
+
+section {
+  display: flex;
+  width: fit-content;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 5px 1px;
+  margin-bottom: 15px;
+  /* gap: 40px; */
+  /* grid-template-columns: auto auto; */
+}
+
+.myButton {
+  border: none;
+  background-color: rgb(12, 88, 91);
+  height: 30px;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 16px;
+  padding: 0px 10px;
+}
+
+input {
+  width: 250px;
+  padding-left: 5px;
+  height: 30px;
+  border: none;
+}
+
+.result {
+  font-size: 16px;
+  font-family: arial;
+}
+
+.wrongAnswer {
+  color: red;
+}
+
+.correctAnswer {
+  color: green;
+}
