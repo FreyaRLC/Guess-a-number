@@ -4,7 +4,7 @@ let randomNumber;
 let max = 100;
 let userGuess;
 
-document.querySelector(".myButton").addEventListener("click", userGuesses);
+document.querySelector(".myButton").addEventListener("mousedown", userGuesses);
 
 generateNumber();
 function generateNumber() {
