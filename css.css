@@ -39,6 +39,9 @@ input {
   padding-left: 5px;
   height: 30px;
   border: none;
+  font-family: arial;
+  color: rgb(12, 88, 91);
+  font-size: 15px;
 }
 
 .result {
