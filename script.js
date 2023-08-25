@@ -1,41 +1,37 @@
 "use strict";
 
-let randomNumber;
 let max = 100;
-let userGuess;
+let min = 1;
+let timesGuessed = 0;
 
-document.querySelector(".myButton").addEventListener("mousedown", userGuesses);
+addEventListenersToButtons();
 
-generateNumber();
-function generateNumber() {
-  randomNumber = Math.floor(Math.random() * max) + 1;
-  showNumber();
+function addEventListenersToButtons() {
+  console.log("Adding eventlisteners");
+  document.querySelector("#start").addEventListener("click", computerGuesses);
+  document.querySelector("#tooLow").addEventListener("click", tooLow);
+  document.querySelector("#tooHigh").addEventListener("click", tooHigh);
 }
 
-function showNumber() {
-  console.log(randomNumber);
-  // document.querySelector(".max").textContent = max;
-  // document.querySelector(".randomNumber").textContent = randomNumber;
+function computerGuesses() {
+  console.log("Computer guessing");
+  const midpoint = Math.floor((min + max) / 2);
+  timesGuessed++;
+
+  document.querySelector("#guessNumber").textContent = timesGuessed;
+  document.querySelector(
+    "#computersGuess"
+  ).textContent = `Was your number: ${midpoint}?`;
 }
 
-function userGuesses() {
-  // console.log("userGuesses");
-  userGuess = document.getElementById("userNumber").value;
-  determineResult();
+function showGuess() {}
+
+function tooHigh() {
+  max = Math.floor((min + max) / 2) - 1;
+  computerGuesses();
 }
 
-function determineResult() {
-  if (userGuess < randomNumber) {
-    // console.log("You guessed too low");
-    document.querySelector(".result").textContent = `Try again, your guess was too low.`;
-    document.querySelector(".result").style.color = "red";
-  } else if (userGuess > randomNumber) {
-    // console.log("You guessed too high");
-    document.querySelector(".result").textContent = `Shucks! Your guess was too high.`;
-    document.querySelector(".result").style.color = "red";
-  } else {
-    console.log("Congratulations, you guessed right!");
-    document.querySelector(".result").textContent = `Wohoo! You guessed correctly!`;
-    document.querySelector(".result").style.color = "green";
-  }
+function tooLow() {
+  min = Math.floor((min + max) / 2) + 1;
+  computerGuesses();
 }
