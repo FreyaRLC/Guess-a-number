@@ -35,3 +35,4 @@ function tooLow() {
   min = Math.floor((min + max) / 2) + 1;
   computerGuesses();
 }
+// test
